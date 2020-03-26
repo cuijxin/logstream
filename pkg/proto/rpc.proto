@@ -1,0 +1,17 @@
+syntax = "proto3";
+
+package proto;
+
+service Reader {
+    rpc CreateStream(Request) returns (stream Response);
+}
+
+message Request {
+    string app_id = 1;
+}
+
+message Response {
+    string app_id = 1;
+    int64 epoch = 2;
+    int64 id = 3;
+}
